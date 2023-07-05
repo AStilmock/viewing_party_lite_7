@@ -4,7 +4,7 @@ class CreateViewingParties < ActiveRecord::Migration[7.0]
       t.integer :duration
       t.datetime :when
       t.time :start_time
-      t.references :Movie, null: false, foreign_key: true
+      t.references :movie, null: false, foreign_key: true
 
       t.timestamps
     end

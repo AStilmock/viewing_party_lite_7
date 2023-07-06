@@ -1,1 +1,17 @@
 <h1> Hi <%= @user.name %>, let's find a movie </h1>
+
+<div id=top_5>
+  <h3> Browse Titles </h3>
+  <%= button_to "Top 5 Movies", movies_results_path, method: :get %>
+</div>
+</br>
+<div id=title_search>
+  <h3> Search By Title </h3>
+  <%= form_with url: movies_results_path, method: :get, data: {turbo: false}, local: true do |f|%>
+    <%= f.label  :Title %>
+    <%= f.text_field :Title %>
+
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
+
